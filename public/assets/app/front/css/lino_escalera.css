@@ -1,0 +1,255 @@
+/*body {
+  background-image: url("./images/background.jpg");
+  background-repeat:no-repeat;
+  background-position:center;
+}*/
+
+@font-face {
+  font-family: "Tommy Hilfiger";
+  src: url("tommy.ttf");
+}
+
+body {
+  font-family: "Signika", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 80px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#wrapper {
+  width: 638px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#header {
+  box-sizing:border-box;
+  position: fixed;
+  padding-top: 36px;
+  height: 128px;
+  width: 638px;
+  background: white;
+  z-index: 100;
+}
+
+#header #logo {
+  float: left;
+  font-family: "Tommy Hilfiger", sans-serif;
+  text-transform: uppercase;
+}
+
+#header #logo.text_replaced {
+  width: 300px;
+  height: 32px;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+#header #logo .main {
+  font-size: 21px;
+  letter-spacing: 3px;
+}
+
+#header #logo .sub {
+  font-family: 'Lato', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  font-weight: 300;
+  padding-left: 2px;
+  margin-top: 3px;
+}
+
+#header #menu {
+  font-family: "Tommy Hilfiger", sans-serif;
+  float: right;
+  width: 214px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 16px;
+}
+
+#header #menu.text_replaced {
+  width: 188px;
+  height: 86px;
+  background-image: url("./images/menu.png");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+#header #menu a:hover,
+#header #menu li.active a {
+  text-decoration: line-through;
+}
+
+#header #menu ul {
+  width: 140px;
+  float: left;
+  margin: 0px;
+}
+
+#header #menu ul.right {
+  width: 10px;
+}
+
+#header #menu ul li {
+  list-style: none;
+}
+
+#header #menu ul li:hover {
+
+}
+
+#header #menu .main {
+  color: rgb(175, 175, 175);
+}
+
+#content {
+  padding-top: 128px;
+  /*border: 1px solid red;*/
+}
+
+/* EMAIL */
+#email {
+  box-sizing:border-box;
+  position: fixed;
+
+  height: 7px;
+
+  transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+
+  font-family: "Tommy Hilfiger", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 8px;
+  letter-spacing: 4px;
+
+  margin-top: 514px;
+  margin-left: -122px;
+}
+
+#email.text_replaced {
+  margin-top: 483px;
+  margin-left: -93px;
+
+  width: 185px;
+  height: 70px;
+  background-image: url("./images/email.png");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+/* HOME */
+.pic_big {
+  width: 638px;
+}
+
+ul.pics {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul.pics li {
+  list-style: none;
+  float: left;
+}
+
+ul.pics .pic {
+  width: 310px;
+  margin-top: 14px;
+}
+
+ul.pics li:nth-child(even) {
+  margin-left: 14px;
+}
+
+.pic {
+  position: relative;
+}
+
+.pic .caption {
+  display: none;
+  box-sizing:border-box;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, .4);
+  text-align: right;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 4px;
+}
+
+.pic:hover .caption {
+  display: block;
+}
+
+/* ITEMS */
+/* FILM */
+
+.item .pic {
+  width: 100%;
+  text-align: center;
+}
+
+.item .info {
+  margin-top: 18px;
+}
+
+.item .text {
+  margin-top: 20px;
+  line-height: 22px;
+  font-size: 12px;
+}
+
+.item .text p {
+  margin-bottom: 10px;
+}
+
+.item .text.es {
+  margin-top: 20px;
+  line-height: 22px;
+  color: rgb(175, 175, 175);
+}
+
+.item .text strong {
+  color: rgb(175, 175, 175);
+}
+
+.item .title {
+  font-size: 17px;
+  /*font-weight: 600;*/
+}
+
+/* ABOUT */
+.item.about .title{
+  font-family: "Tommy Hilfiger", sans-serif;
+  text-align: right;
+  font-size: 14px;
+}
+
+.item.about .text {
+  text-align: justify;
+  line-height: 16px;
+  font-size: 12px;
+}
+
+.item.about hr {
+  margin-top: 21px;
+}
+
+/* FOOTER */
+#footer {
+  width: 100px;
+}

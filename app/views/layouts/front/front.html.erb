@@ -6,8 +6,34 @@
 
   <body>
     <div id="wrapper">
-      <div id="content" class="container">
-        <h1 class="page-title"><%= yield(:title) %></h1>
+      <div id="email" class=""><a href="mailto:me@linoescalera.com">me@linoescalera.com</a></div>
+
+      <div id="header">
+        <a href="./home.html">
+          <div id="logo" class="">
+            <div class="main">Lino Escalera</div>
+            <div class="sub">Film &amp; Commercial Director</div>
+          </div>
+        </a>
+
+        <div id="menu" class="">
+          <ul class="left">
+            <li class="work main">Work</li>
+            <li class="film"><a href="./home.html">Film</a></li>
+            <li class="commercials active"><a href="./home.html">Commercials</a></li>
+            <li class="branded_content"><a href="./home.html">Branded Content</a></li>
+          </ul>
+
+          <ul class="right">
+            <li class="follow main">Follow</li>
+            <li class="about"><a href="./about.html">About</a></li>
+            <li class="facebook"><a href="http://facebook.com">Facebook</a></li>
+            <li class="twitter"><a href="http://twitter.com">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="content">
         <%= yield %>
       </div>
     </div>

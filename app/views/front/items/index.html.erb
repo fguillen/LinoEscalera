@@ -1,9 +1,44 @@
-<% title "Items" %>
+<a href="./video.html">
+  <div class="pic pic_big">
+    <img src="./images/pic_big.jpg">
+    <div class="caption">No sé decir adiós</div>
+  </div>
+</a>
 
-<ul>
-  <% @items.each do |item| %>
-    <li><%= link_to item.title, [:front, item] %></li>
-  <% end %>
+<ul class="pics">
+  <li>
+    <a href="./video.html">
+      <div class="pic">
+        <img src="./images/pic1.jpg">
+        <div class="caption">No sé decir adiós</div>
+      </div>
+    </a>
+  </li>
+
+  <li>
+    <a href="./video.html">
+      <div class="pic">
+        <img src="./images/pic2.jpg">
+        <div class="caption">No sé decir adiós</div>
+      </div>
+    </a>
+  </li>
+
+  <li>
+    <a href="./video.html">
+      <div class="pic">
+        <img src="./images/pic3.jpg">
+        <div class="caption">No sé decir adiós</div>
+      </div>
+    </a>
+  </li>
+
+  <li>
+    <a href="./video.html">
+      <div class="pic">
+        <img src="./images/pic4.jpg">
+        <div class="caption">No sé decir adiós</div>
+      </div>
+    </a>
+  </li>
 </ul>
-
-<%= will_paginate @items %>
