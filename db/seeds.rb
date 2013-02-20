@@ -5,20 +5,25 @@ ActiveRecord::Base.transaction do
     item =
       Item.create!(
         :title => "#{Faker::Lorem.sentence} – #{index}",
-        :text => Faker::Lorem.paragraphs.join("\n")
+        :text => Faker::Lorem.paragraphs.join("\n"),
       )
 
-    rand(10).times do |index|
+    item.collection_list << Item::COLLECTIONS[:home]
+    item.collection_list << Item::COLLECTIONS.values.sample
+    item.save!
+
+    rand(3).times do |index|
       item.pics.create!(
-        :attach => File.open("#{Rails.root}/test/fixtures/pic.jpg")
+        :attach => File.open("#{Rails.root}/test/fixtures/pic_big.jpg")
       )
     end
 
     puts "Created item [#{item.id}] – #{item.title}"
   end
 
-  email = "admin@skeleton.org"
-  password = Digest::MD5.hexdigest("#{Time.now.to_i}-#{rand(1000)}")
+  email = "email@email.com"
+  password = "2013pa$$"
+
   admin_user =
     AdminUser.create!(
       :name => "Super Admin",

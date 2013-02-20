@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.11)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.3.3)
+      rails (~> 3.0)
     arel (3.0.2)
     authlogic (3.2.0)
       activerecord (>= 3.0.0)
@@ -122,8 +124,6 @@ GEM
     rdoc (3.12.1)
       json (~> 1.4)
     rubyzip (0.9.9)
-    rvm-capistrano (1.3.0.rc1)
-      capistrano (>= 2.0.0)
     selenium-webdriver (2.29.0)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -159,6 +159,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   authlogic
   aws-sdk
   bluecloth
@@ -174,7 +175,6 @@ DEPENDENCIES
   nifty-generators
   paperclip
   rails (= 3.2.11)
-  rvm-capistrano (= 1.3.0.rc1)
   simplecov
   sqlite3
   strip_attributes

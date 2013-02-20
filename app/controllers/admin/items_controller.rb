@@ -1,8 +1,6 @@
 class Admin::ItemsController < Admin::AdminController
-  before_filter :require_admin_user
-
   def index
-    @items = Item.by_position.paginate(:page => params[:page], :per_page => 10)
+    @items = Item.by_position
   end
 
   def show
@@ -16,10 +14,10 @@ class Admin::ItemsController < Admin::AdminController
   def create
     @item = Item.new(params[:item])
     if @item.save
-      redirect_to [:admin, @item], :notice => "Successfully created Item."
+      redirect_to edit_admin_item_path(@item), :notice => "Successfully created Item."
     else
       flash.now[:alert] = "Some error trying to create item."
-      render :action => 'new'
+      render :action => "new"
     end
   end
 
@@ -30,7 +28,7 @@ class Admin::ItemsController < Admin::AdminController
   def update
     @item = Item.find(params[:id])
     if @item.update_attributes(params[:item])
-      redirect_to [:admin, @item], :notice  => "Successfully updated Item."
+      redirect_to edit_admin_item_path(@item), :notice  => "Successfully updated Item."
     else
       flash.now[:alert] = "Some error trying to update Item."
       render :action => 'edit'

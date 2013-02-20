@@ -1,9 +1,17 @@
 class Item < ActiveRecord::Base
+  COLLECTIONS = {
+    :home => "home",
+    :film => "film",
+    :commercial => "commercial",
+    :brand => "brand"
+  }
+
   strip_attributes
+  acts_as_taggable_on :collections
 
   has_many :pics
 
-  attr_accessible :title, :text, :position
+  attr_protected nil
 
   before_validation :initialize_position
 
@@ -19,5 +27,15 @@ class Item < ActiveRecord::Base
 
   def to_param
     "#{id}-#{title.to_url}"
+  end
+
+  def pic
+    return nil if pics.empty?
+    pics.first.attach(:front)
+  end
+
+  def pic_main
+    return nil if pics.empty?
+    pics.first.attach(:front_main)
   end
 end

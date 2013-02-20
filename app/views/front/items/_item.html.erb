@@ -1,0 +1,8 @@
+<li>
+  <%= link_to [:front, item] do %>
+    <div class="pic">
+      <%= image_tag item.pic %>
+      <div class="caption"><%= item.title %></div>
+    </div>
+  <% end %>
+</li>

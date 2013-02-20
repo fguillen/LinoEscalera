@@ -12,11 +12,11 @@ gem "will_paginate"
 gem "will_paginate-bootstrap"
 gem "bluecloth"
 gem "authlogic"
-gem "rvm-capistrano", "1.3.0.rc1"
+gem "acts-as-taggable-on"
+gem "faker"
 
 group :development do
   gem "nifty-generators"
-  gem "faker"
   gem "capistrano"
 end
 

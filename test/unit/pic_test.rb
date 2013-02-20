@@ -14,6 +14,7 @@ class PicTest < ActiveSupport::TestCase
         :attach => File.open(fixture("pic.jpg")),
       )
 
+    assert_match(/\/assets\/uploads\/test\/1001\/#{pic.id}_front_main.jpg/, pic.attach(:front_main))
     assert_match(/\/assets\/uploads\/test\/1001\/#{pic.id}_front.jpg/, pic.attach(:front))
     assert_match(/\/assets\/uploads\/test\/1001\/#{pic.id}_admin.jpg/, pic.attach(:admin))
   end

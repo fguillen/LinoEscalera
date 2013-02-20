@@ -8,24 +8,21 @@
       <tr>
         <th class="span1"></th>
         <th class="span1">Id</th>
-        <th class="span7">Title</th>
-        <th class="span1">Position</th>
-        <th class="span2">Created At</th>
+        <th class="span5">Title</th>
+        <th class="span5">Collections</th>
       </tr>
     </thead>
 
     <tbody data-update-url="<%= reorder_admin_items_url %>">
       <% @items.each do |item| %>
         <tr data-id="<%= item.id %>">
-          <td class="span1 handle"><i class="icon-list"></i></td>
-          <td class="span1"><%= link_to item.id, [:admin, item] %></td>
-          <td class="span7"><%= item.title %></td>
-          <td class="span1"><%= item.position %></td>
-          <td class="span2"><%= item.created_at.to_s(:datetimedb) %></td>
+          <td class="handle"><i class="icon-list"></i></td>
+          <td><%= item.id %></td>
+          <td><%= link_to item.title, edit_admin_item_path(item) %></td>
+          <td><%= item.collection_list.join(", ") %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
-  <%= will_paginate(@items, :renderer => BootstrapPagination::Rails, :class => "pagination pagination-right") %>
 </div>

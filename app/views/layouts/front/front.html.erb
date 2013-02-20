@@ -10,18 +10,19 @@
 
       <div id="header">
         <a href="./home.html">
+        <%= link_to root_path do %>
           <div id="logo" class="">
             <div class="main">Lino Escalera</div>
             <div class="sub">Film &amp; Commercial Director</div>
           </div>
-        </a>
+        <% end %>
 
         <div id="menu" class="">
           <ul class="left">
             <li class="work main">Work</li>
-            <li class="film"><a href="./home.html">Film</a></li>
-            <li class="commercials active"><a href="./home.html">Commercials</a></li>
-            <li class="branded_content"><a href="./home.html">Branded Content</a></li>
+            <li class="film"><%= link_to "Film", front_collection_path(Item::COLLECTIONS[:film]) %></li>
+            <li class="commercials active"><%= link_to "Commercial", front_collection_path(Item::COLLECTIONS[:commercial]) %></li>
+            <li class="branded_content"><%= link_to "Branded Content", front_collection_path(Item::COLLECTIONS[:brand]) %></li>
           </ul>
 
           <ul class="right">

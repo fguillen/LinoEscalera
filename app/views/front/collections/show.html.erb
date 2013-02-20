@@ -1,0 +1,7 @@
+<% unless @items.empty? %>
+  <%= render :partial => "front/items/item_main", :locals => { :item => @items.first } %>
+
+  <ul class="pics">
+    <%= render @items[1..-1] %>
+  </ul>
+<% end %>
