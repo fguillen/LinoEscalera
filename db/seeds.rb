@@ -4,7 +4,7 @@ ActiveRecord::Base.transaction do
   20.times do |index|
     item =
       Item.create!(
-        :title => "#{Faker::Lorem.sentence} – #{index}",
+        :title => Faker::Lorem.sentence,
         :text => Faker::Lorem.paragraphs.join("\n"),
       )
 
@@ -12,7 +12,7 @@ ActiveRecord::Base.transaction do
     item.collection_list << Item::COLLECTIONS.values.sample
     item.save!
 
-    rand(3).times do |index|
+    (rand(3)+1).times do |index|
       item.pics.create!(
         :attach => File.open("#{Rails.root}/test/fixtures/pic_big.jpg")
       )
@@ -20,17 +20,4 @@ ActiveRecord::Base.transaction do
 
     puts "Created item [#{item.id}] – #{item.title}"
   end
-
-  email = "email@email.com"
-  password = "2013pa$$"
-
-  admin_user =
-    AdminUser.create!(
-      :name => "Super Admin",
-      :email => email,
-      :password => password,
-      :password_confirmation => password
-    )
-
-  puts "AdminUser created #{email}/#{password}"
 end

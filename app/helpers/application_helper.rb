@@ -14,7 +14,8 @@ module ApplicationHelper
     menus = {
       :film => ["/front/collections/film"],
       :commercial => ["/front/collections/commercial"],
-      :brand => ["/front/collections/brand"]
+      :brand => ["/front/collections/brand"],
+      :about => ["/front/pages/about"]
     }
 
     path = request.fullpath.gsub(/\?.*/, "")

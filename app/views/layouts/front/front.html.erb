@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag "/assets/vendor/etc/reset.css" %>
 
     <!-- application -->
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "/assets/app/front/css/lino_escalera.css", :media => "all" %>
     <%= javascript_include_tag "/assets/app/front/js/front.js" %>
 
@@ -24,7 +24,7 @@
       <div id="header">
         <a href="./home.html">
         <%= link_to root_path do %>
-          <div id="logo" class="">
+          <div id="logo" class="text_replaced">
             <div class="main">Lino Escalera</div>
             <div class="sub">Film &amp; Commercial Director</div>
           </div>
@@ -40,7 +40,7 @@
 
           <ul class="right">
             <li class="follow main">Follow</li>
-            <li class="about"><a href="./about.html">About</a></li>
+            <li class="about <%= menu_class(:about) %>"><%= link_to "About", front_page_path("about") %></li>
             <li class="facebook"><a href="http://facebook.com">Facebook</a></li>
             <li class="twitter"><a href="http://twitter.com">Twitter</a></li>
           </ul>
