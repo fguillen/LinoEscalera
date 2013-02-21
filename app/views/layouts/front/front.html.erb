@@ -20,9 +20,9 @@
         <div id="menu" class="">
           <ul class="left">
             <li class="work main">Work</li>
-            <li class="film"><%= link_to "Film", front_collection_path(Item::COLLECTIONS[:film]) %></li>
-            <li class="commercials active"><%= link_to "Commercial", front_collection_path(Item::COLLECTIONS[:commercial]) %></li>
-            <li class="branded_content"><%= link_to "Branded Content", front_collection_path(Item::COLLECTIONS[:brand]) %></li>
+            <li class="film <%= menu_class(:film) %>"><%= link_to "Film", front_collection_path(Item::COLLECTIONS[:film]) %></li>
+            <li class="commercials <%= menu_class(:commercial) %>"><%= link_to "Commercial", front_collection_path(Item::COLLECTIONS[:commercial]) %></li>
+            <li class="branded_content <%= menu_class(:brand) %>"><%= link_to "Branded Content", front_collection_path(Item::COLLECTIONS[:brand]) %></li>
           </ul>
 
           <ul class="right">

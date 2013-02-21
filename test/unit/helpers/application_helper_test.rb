@@ -1,33 +1,21 @@
 require "test_helper"
 
 class ApplicationHelperTest < ActionView::TestCase
-  def test_admin_menu_class
+  def test_menu_class
     request_mock = mock
     self.stubs(:request).returns(request_mock)
 
     request_mock.stubs(:fullpath).returns("/wadus/wadus")
-    assert_equal("no-active", admin_menu_class(:admin_users))
+    assert_equal("no-active", menu_class(:film))
 
-    request_mock.stubs(:fullpath).returns("/admin/admin_users")
-    assert_equal("active", admin_menu_class(:admin_users))
+    request_mock.stubs(:fullpath).returns("/front/collections/film")
+    assert_equal("active", menu_class(:film))
 
-    request_mock.stubs(:fullpath).returns("/admin/admin_users/1")
-    assert_equal("active", admin_menu_class(:admin_users))
+    request_mock.stubs(:fullpath).returns("/front/collections/commercial")
+    assert_equal("active", menu_class(:commercial))
 
-    request_mock.stubs(:fullpath).returns("/admin/admin_users/1/edit")
-    assert_equal("active", admin_menu_class(:admin_users))
-
-    request_mock.stubs(:fullpath).returns("/admin")
-    assert_equal("active", admin_menu_class(:items))
-
-    request_mock.stubs(:fullpath).returns("/admin/items")
-    assert_equal("active", admin_menu_class(:items))
-
-    request_mock.stubs(:fullpath).returns("/admin/items/1")
-    assert_equal("active", admin_menu_class(:items))
-
-    request_mock.stubs(:fullpath).returns("/admin/items/1/edit")
-    assert_equal("active", admin_menu_class(:items))
+    request_mock.stubs(:fullpath).returns("/front/collections/brand")
+    assert_equal("active", menu_class(:brand))
   end
 
 end

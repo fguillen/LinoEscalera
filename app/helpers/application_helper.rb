@@ -10,16 +10,16 @@ module ApplicationHelper
     end
   end
 
-  def admin_menu_class(actual_menu_name)
+  def menu_class(actual_menu_name)
     menus = {
-      :admin_users => ["/admin/admin_users.*"],
-      :items => ["/admin/items.*", "/admin"]
+      :film => ["/front/collections/film"],
+      :commercial => ["/front/collections/commercial"],
+      :brand => ["/front/collections/brand"]
     }
 
-    menus.each do |menu_name, menu_paths|
-      return "active" if actual_menu_name == menu_name && menu_paths.any? { |e| request.fullpath.gsub(/\?.*/, "") =~ /^#{e}$/ }
-    end
+    path = request.fullpath.gsub(/\?.*/, "")
 
+    return "active" if menus[actual_menu_name].any? { |e| path =~ /^#{e}$/ }
     return "no-active"
   end
 end
