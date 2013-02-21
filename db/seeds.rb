@@ -5,7 +5,7 @@ ActiveRecord::Base.transaction do
     item =
       Item.create!(
         :title => Faker::Lorem.sentence,
-        :text => Faker::Lorem.paragraphs.join("\n"),
+        :text => Faker::Lorem.paragraphs.join("\n\n"),
       )
 
     item.collection_list << Item::COLLECTIONS[:home]
