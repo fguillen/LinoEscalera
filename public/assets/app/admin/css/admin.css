@@ -24,3 +24,15 @@
 #grettings #user-name {
   text-align: right;
 }
+
+#items tr .handle i{
+  display:none;
+}
+
+#items tr:hover .handle i{
+  display:block;
+}
+
+#items tr:hover .handle {
+  cursor: pointer;
+}

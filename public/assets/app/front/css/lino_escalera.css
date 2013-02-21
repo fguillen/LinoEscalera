@@ -195,17 +195,7 @@ ul.pics li:nth-child(even) {
   display: block;
 }
 
-/* ITEMS */
-/* FILM */
-
-.item .pic {
-  width: 100%;
-  text-align: center;
-}
-
-.item .info {
-  margin-top: 18px;
-}
+/* ITEM */
 
 .item .text {
   margin-top: 20px;
@@ -225,6 +215,15 @@ ul.pics li:nth-child(even) {
 
 .item .text strong {
   color: rgb(175, 175, 175);
+}
+
+.item .pic {
+  width: 100%;
+  text-align: center;
+}
+
+.item .info {
+  margin-top: 18px;
 }
 
 .item .title {

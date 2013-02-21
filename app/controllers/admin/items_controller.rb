@@ -1,6 +1,7 @@
 class Admin::ItemsController < Admin::AdminController
   def index
     @items = Item.by_position
+    @items = @items.tagged_with(params[:collection]) if params[:collection]
   end
 
   def show

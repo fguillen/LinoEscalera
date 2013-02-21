@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= render "layouts/front/header" %>
+    <meta charset="utf-8">
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= javascript_include_tag "/assets/vendor/jquery/jquery.js" %>
+    <%= stylesheet_link_tag "/assets/vendor/etc/reset.css" %>
+
+    <!-- application -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "/assets/app/front/css/lino_escalera.css", :media => "all" %>
+    <%= javascript_include_tag "/assets/app/front/js/front.js" %>
+
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
   </head>
 
   <body>
@@ -39,7 +52,6 @@
       </div>
     </div>
 
-    <%= render "layouts/front/footer" %>
     <%= render "shared/analytics" %>
   </body>
 </html>

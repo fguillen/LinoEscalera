@@ -26,6 +26,7 @@ class Item < ActiveRecord::Base
   end
 
   def to_param
+    return id if title.blank?
     "#{id}-#{title.to_url}"
   end
 

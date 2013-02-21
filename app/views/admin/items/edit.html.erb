@@ -2,4 +2,7 @@
 <div id="item_form">
   <%= render "form" %>
   <%= render :partial => "form_pics", :item => @item %>
+
+  <h2>Destroy</h2>
+  <%= link_to "Delete this work", [:admin, @item], :method => :delete, :class => "btn btn-danger", :confirm => "Are you sure you want to remove this Work?" %>
 </div>

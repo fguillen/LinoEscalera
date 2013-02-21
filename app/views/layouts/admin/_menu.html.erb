@@ -12,8 +12,16 @@
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li><%= link_to "Works", :admin_items %></li>
-          <li><%= link_to "New work", :new_admin_item %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "All", :admin_items %></li>
+              <li><%= link_to "Home", admin_items_path(:collection => Item::COLLECTIONS[:home]) %></li>
+              <li><%= link_to "Film", admin_items_path(:collection => Item::COLLECTIONS[:film]) %></li>
+              <li><%= link_to "Commercial", admin_items_path(:collection => Item::COLLECTIONS[:commercial]) %></li>
+              <li><%= link_to "Branded Content", admin_items_path(:collection => Item::COLLECTIONS[:brand]) %></li>
+            </ul>
+          </li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

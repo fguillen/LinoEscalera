@@ -2,7 +2,6 @@ require "test_helper"
 
 class Admin::ItemsControllerTest < ActionController::TestCase
   def setup
-    setup_admin_user
   end
 
   def test_index
@@ -13,6 +12,18 @@ class Admin::ItemsControllerTest < ActionController::TestCase
 
     assert_template "admin/items/index"
     assert_equal([item_2, item_1].ids, assigns(:items).ids)
+  end
+
+  def test_index_with_collection
+    item_1 = FactoryGirl.create(:item, :collection_list => [Item::COLLECTIONS[:home], Item::COLLECTIONS[:film]], :position => 10)
+    item_2 = FactoryGirl.create(:item, :collection_list => [Item::COLLECTIONS[:home], Item::COLLECTIONS[:commercial]], :position => 9)
+    item_3 = FactoryGirl.create(:item, :collection_list => [Item::COLLECTIONS[:home], Item::COLLECTIONS[:brand]], :position => 8)
+
+    get :index, :collection => Item::COLLECTIONS[:home]
+    assert_equal([item_3, item_2, item_1].ids, assigns(:items).ids)
+
+    get :index, :collection => Item::COLLECTIONS[:commercial]
+    assert_equal([item_2].ids, assigns(:items).ids)
   end
 
   def test_show
