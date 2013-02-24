@@ -10,13 +10,13 @@
   <div class="pics">
     <ul>
       <% @item.pics.each do |pic| %>
-        <li><%= image_tag pic.attach(:front_big) %></li>
+        <li class="pic"><%= image_tag pic.attach(:front_big) %></li>
       <% end %>
     </ul>
   </div>
 
   <div class="info">
-    <div class="title"><%= @item.title %></div>
+    <h2><%= @item.title %></h2>
     <div class="text">
       <%= @item.text.to_md %>
     </div>

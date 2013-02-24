@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title>LinoEscalera | <%= content_for?(:title) ? yield(:title) : "" %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= javascript_include_tag "/assets/vendor/jquery/jquery.js" %>
@@ -10,6 +10,7 @@
 
     <!-- application -->
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Signika:400,300,600' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "/assets/app/front/css/lino_escalera.css", :media => "all" %>
     <%= javascript_include_tag "/assets/app/front/js/front.js" %>
 
@@ -50,6 +51,8 @@
       <div id="content">
         <%= yield %>
       </div>
+
+      <div id="footer">&nbsp;</div>
     </div>
 
     <%= render "shared/analytics" %>

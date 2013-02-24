@@ -13,7 +13,7 @@ class Pic < ActiveRecord::Base
   paperclip_styles = {
     :front_big => "638x",
     :front_main => "637x319#",
-    :front => "308x129#",
+    :front => "308x135#",
     :admin => "200x100#"
   }
 
