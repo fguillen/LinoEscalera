@@ -4,6 +4,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :title, :null => false
       t.text :text
       t.text :video_script
+      t.attachment :video
       t.integer :position, :null => false
 
       t.timestamps

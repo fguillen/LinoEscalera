@@ -16,6 +16,11 @@ FactoryGirl.define do
     attach { File.new("#{Rails.root}/test/fixtures/pic.jpg") }
   end
 
+  factory :video do
+    association :item
+    attach { File.new("#{Rails.root}/test/fixtures/pic.jpg") }
+  end
+
   factory :page do
     sequence(:title) { |n| "Page Title #{n}" }
     text "The text"

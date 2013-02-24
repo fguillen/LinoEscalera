@@ -13,7 +13,6 @@
     <link href='http://fonts.googleapis.com/css?family=Signika:400,300,600' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "/assets/app/front/css/lino_escalera.css", :media => "all" %>
     <%= javascript_include_tag "/assets/app/front/js/front.js" %>
-
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
@@ -35,15 +34,15 @@
           <ul class="left">
             <li class="work main">Work</li>
             <li class="film <%= menu_class(:film) %>"><%= link_to "Film", front_collection_path(Item::COLLECTIONS[:film]) %></li>
-            <li class="commercials <%= menu_class(:commercial) %>"><%= link_to "Commercial", front_collection_path(Item::COLLECTIONS[:commercial]) %></li>
+            <li class="commercials <%= menu_class(:commercial) %>"><%= link_to "Commercials", front_collection_path(Item::COLLECTIONS[:commercial]) %></li>
             <li class="branded_content <%= menu_class(:brand) %>"><%= link_to "Branded Content", front_collection_path(Item::COLLECTIONS[:brand]) %></li>
           </ul>
 
           <ul class="right">
             <li class="follow main">Follow</li>
             <li class="about <%= menu_class(:about) %>"><%= link_to "About", front_about_path %></li>
-            <li class="facebook"><a href="http://facebook.com">Facebook</a></li>
-            <li class="twitter"><a href="http://twitter.com">Twitter</a></li>
+            <li class="facebook"><a href="http://www.facebook.com/lininescalera">Facebook</a></li>
+            <li class="twitter"><a href="https://twitter.com/LinoEsCalera">Twitter</a></li>
           </ul>
         </div>
       </div>

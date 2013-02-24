@@ -18,4 +18,10 @@ class ItemTest < ActiveSupport::TestCase
 
     assert_equal([item_2, item_1].ids, Item.by_position.ids)
   end
+
+  def test_video
+    item = FactoryGirl.create(:item, :id => 1001, :video => File.open(fixture("pic.jpg")))
+    assert_match(/\/assets\/uploads\/test\/1001\/video.jpg/, item.video.url)
+
+  end
 end

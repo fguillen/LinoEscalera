@@ -1,7 +1,7 @@
 # coding: utf-8
 
 ActiveRecord::Base.transaction do
-  20.times do |index|
+  10.times do |index|
     item =
       Item.create!(
         :title => Faker::Lorem.sentence,

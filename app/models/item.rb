@@ -21,6 +21,23 @@ class Item < ActiveRecord::Base
 
   scope :by_position, order("position asc")
 
+
+  # TODO: ugly! the point is that in test we don't use S3 so it needs another config
+  if APP_CONFIG[:s3_credentials]
+    has_attached_file(
+      :video,
+      :storage => :s3,
+      :s3_credentials => APP_CONFIG[:s3_credentials],
+      :path => "/:rails_env/:id/video.:extension",
+    )
+  else
+    has_attached_file(
+      :video,
+      :url => "/assets/uploads/:rails_env/:id/video.:extension",
+      :path => ":rails_root/public:url"
+    )
+  end
+
   def initialize_position
     self.position ||= Item.minimum(:position).to_i - 1
   end

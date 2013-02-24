@@ -24,12 +24,16 @@ ActiveRecord::Schema.define(:version => 20130224141857) do
   end
 
   create_table "items", :force => true do |t|
-    t.string   "title",        :null => false
+    t.string   "title",              :null => false
     t.text     "text"
     t.text     "video_script"
-    t.integer  "position",     :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
+    t.integer  "position",           :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.text     "text_es"
   end
 

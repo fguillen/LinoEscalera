@@ -1,6 +1,18 @@
 <% title "Item > #{@item.title}" %>
 
 <div class="item film">
+  <% if @item.video.exists? %>
+    <div class="video_qt">
+      <embed
+        src="<%= @item.video.url %>"
+        autoplay="true"
+        width="638"
+        height="494"
+        scale="aspect"
+        pluginspage="http://www.apple.com/quicktime/download/"> </embed>
+    </div>
+  <% end %>
+
   <% if !@item.video_script.blank? %>
     <div class="video_script">
       <%= @item.video_script.html_safe %>
