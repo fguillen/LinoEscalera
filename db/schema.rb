@@ -13,19 +13,10 @@
 
 ActiveRecord::Schema.define(:version => 20130224141857) do
 
-  create_table "admin_users", :force => true do |t|
-    t.string   "name",              :null => false
-    t.string   "email",             :null => false
-    t.string   "crypted_password"
-    t.string   "password_salt"
-    t.string   "persistence_token"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
   create_table "items", :force => true do |t|
     t.string   "title",              :null => false
     t.text     "text"
+    t.text     "text_es"
     t.text     "video_script"
     t.string   "video_file_name"
     t.string   "video_content_type"
@@ -34,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20130224141857) do
     t.integer  "position",           :null => false
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-    t.text     "text_es"
   end
 
   create_table "pages", :force => true do |t|

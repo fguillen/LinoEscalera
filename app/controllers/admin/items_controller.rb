@@ -45,8 +45,6 @@ class Admin::ItemsController < Admin::AdminController
   def reorder
     old_positions = Item.find(params[:ids]).map(&:position).sort
 
-    puts "XXX: old_positions: #{old_positions}"
-
     params[:ids].each_with_index do |id, index|
       Item.update_all(["position=?", old_positions[index]], ["id=?", id])
     end

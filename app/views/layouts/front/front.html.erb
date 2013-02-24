@@ -12,6 +12,7 @@
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Signika:400,300,600' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "/assets/app/front/css/lino_escalera.css", :media => "all" %>
+
     <%= javascript_include_tag "/assets/app/front/js/front.js" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
@@ -20,7 +21,6 @@
   <body>
     <div id="wrapper">
       <div id="email" class=""><a href="mailto:me@linoescalera.com">me@linoescalera.com</a></div>
-
       <div id="header">
         <a href="./home.html">
         <%= link_to root_path do %>

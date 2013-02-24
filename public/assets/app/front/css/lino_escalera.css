@@ -10,7 +10,9 @@ a {
 }
 
 #wrapper {
-  width: 638px;
+  box-sizing:border-box;
+  width: 698px;
+  padding: 0 30px;
   margin: 0 auto;
   position: relative;
 }
@@ -135,7 +137,8 @@ ul.pics li {
 }
 
 ul.pics .pic {
-  width: 310px;
+  width: 311px;
+  height: 135px;
   margin-top: 14px;
 }
 

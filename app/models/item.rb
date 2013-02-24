@@ -49,16 +49,16 @@ class Item < ActiveRecord::Base
 
   def thumb
     return nil if pics.empty?
-    pics.first.attach(:front)
+    pics.by_position.first.attach(:front)
   end
 
   def thumb_main
     return nil if pics.empty?
-    pics.first.attach(:front_main)
+    pics.by_position.first.attach(:front_main)
   end
 
   def pics_show
-    pics[1..-1] || []
+    pics.by_position[1..-1] || []
   end
 
   def first_in_collection?
