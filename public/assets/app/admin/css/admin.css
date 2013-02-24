@@ -36,3 +36,7 @@
 #items tr:hover .handle {
   cursor: pointer;
 }
+
+#items tr.first_in_collection .title {
+  font-weight: bold;
+}

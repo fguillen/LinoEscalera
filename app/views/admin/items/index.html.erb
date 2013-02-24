@@ -15,10 +15,10 @@
 
     <tbody data-update-url="<%= reorder_admin_items_url %>">
       <% @items.each do |item| %>
-        <tr data-id="<%= item.id %>">
+        <tr data-id="<%= item.id %>" class="<%= "first_in_collection" if item.first_in_collection? %>">
           <td class="handle"><i class="icon-list"></i></td>
           <td><%= item.id %></td>
-          <td><%= link_to item.title, edit_admin_item_path(item) %></td>
+          <td class="title"><%= link_to item.title, edit_admin_item_path(item) %></td>
           <td><%= item.collection_list.join(", ") %></td>
         </tr>
       <% end %>

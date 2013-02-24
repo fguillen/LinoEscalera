@@ -109,9 +109,11 @@ class Admin::ItemsControllerTest < ActionController::TestCase
   end
 
   def test_reorder
-    item_1 = FactoryGirl.create(:item, :position => 1)
-    item_2 = FactoryGirl.create(:item, :position => 2)
-    item_3 = FactoryGirl.create(:item, :position => 3)
+    Item.destroy_all
+
+    item_1 = FactoryGirl.create(:item, :position => 10)
+    item_2 = FactoryGirl.create(:item, :position => 20)
+    item_3 = FactoryGirl.create(:item, :position => 30)
 
     assert_equal([item_1, item_2, item_3].ids, Item.by_position.ids)
 
@@ -125,5 +127,13 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     assert_equal("ok", JSON.parse(response.body)["status"])
 
     assert_equal([item_2, item_3, item_1].ids, Item.by_position.ids)
+
+    item_1.reload
+    item_2.reload
+    item_3.reload
+
+    assert_equal(10, item_2.position)
+    assert_equal(20, item_3.position)
+    assert_equal(30, item_1.position)
   end
 end

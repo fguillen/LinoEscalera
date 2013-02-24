@@ -60,4 +60,12 @@ class Item < ActiveRecord::Base
   def pics_show
     pics[1..-1] || []
   end
+
+  def first_in_collection?
+    collection_list.each do |collection|
+      return true if Item.tagged_with(collection).minimum(:position) == position
+    end
+
+    return false
+  end
 end

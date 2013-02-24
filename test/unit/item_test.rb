@@ -22,6 +22,17 @@ class ItemTest < ActiveSupport::TestCase
   def test_video
     item = FactoryGirl.create(:item, :id => 1001, :video => File.open(fixture("pic.jpg")))
     assert_match(/\/assets\/uploads\/test\/1001\/video.jpg/, item.video.url)
+  end
 
+  def test_first_in_collection
+    Item.destroy_all
+
+    item_1 = FactoryGirl.create(:item, :position => 20, :collection_list => [Item::COLLECTIONS[:home]])
+    item_2 = FactoryGirl.create(:item, :position => 10, :collection_list => [Item::COLLECTIONS[:home]])
+    item_3 = FactoryGirl.create(:item, :position => 30, :collection_list => [Item::COLLECTIONS[:home], Item::COLLECTIONS[:film]])
+
+    assert_equal(false, item_1.first_in_collection?)
+    assert_equal(true, item_2.first_in_collection?)
+    assert_equal(true, item_3.first_in_collection?)
   end
 end
