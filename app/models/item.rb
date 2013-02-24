@@ -30,13 +30,17 @@ class Item < ActiveRecord::Base
     "#{id}-#{title.to_url}"
   end
 
-  def pic
+  def thumb
     return nil if pics.empty?
     pics.first.attach(:front)
   end
 
-  def pic_main
+  def thumb_main
     return nil if pics.empty?
     pics.first.attach(:front_main)
+  end
+
+  def pics_show
+    pics[1..-1] || []
   end
 end

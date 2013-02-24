@@ -1,0 +1,17 @@
+<% title "Pages > About" %>
+
+<div class="item about">
+  <div class="info">
+    <div class="text">
+      <%= @page.text.to_md %>
+    </div>
+
+    <% if @page.text_es %>
+      <hr />
+
+      <div class="text es">
+        <%= @page.text_es.to_md %>
+      </div>
+    <% end %>
+  </div>
+</div>

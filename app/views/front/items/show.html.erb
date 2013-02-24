@@ -9,7 +9,7 @@
 
   <div class="pics">
     <ul>
-      <% @item.pics.each do |pic| %>
+      <% @item.pics_show.each do |pic| %>
         <li class="pic"><%= image_tag pic.attach(:front_big) %></li>
       <% end %>
     </ul>

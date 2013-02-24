@@ -3,13 +3,11 @@ require "test_helper"
 class Admin::ItemCreateIntegrationTestTest < ActionDispatch::IntegrationTest
   def setup
     super
-
-    setup_admin_user
   end
 
   def test_create_performance
     visit admin_items_path
-    click_link "New Item"
+    click_link "New Work"
 
     fill_in "item_title", :with => "This is the new item"
     fill_in "item_text", :with => "This is the **text**."

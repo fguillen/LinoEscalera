@@ -54,15 +54,4 @@ class ActionDispatch::IntegrationTest
     Capybara.reset_sessions!    # Forget the (simulated) browser state
     Capybara.use_default_driver # Revert Capybara.current_driver to Capybara.default_driver
   end
-
-  def setup_admin_user
-    @admin_user = FactoryGirl.create(:admin_user)
-
-    visit admin_login_path
-    fill_in "admin_user_session_email", :with => @admin_user.email
-    fill_in "admin_user_session_password", :with => "pass"
-    click_button "Sign in"
-
-    page.has_content?("Admin User authenticated!")
-  end
 end

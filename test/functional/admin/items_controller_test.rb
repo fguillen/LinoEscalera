@@ -26,15 +26,6 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     assert_equal([item_2].ids, assigns(:items).ids)
   end
 
-  def test_show
-    item = FactoryGirl.create(:item)
-
-    get :show, :id => item
-
-    assert_template "admin/items/show"
-    assert_equal(item, assigns(:item))
-  end
-
   def test_new
     get :new
     assert_template "admin/items/new"
@@ -61,7 +52,7 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     )
 
     item = Item.last
-    assert_redirected_to [:admin, item]
+    assert_redirected_to edit_admin_item_path(item)
 
     assert_equal("Item Title", item.title)
     assert_equal("My **text**", item.text)
@@ -100,7 +91,7 @@ class Admin::ItemsControllerTest < ActionController::TestCase
 
     item.reload
 
-    assert_redirected_to [:admin, item]
+    assert_redirected_to edit_admin_item_path(item)
     assert_not_nil(flash[:notice])
 
     assert_equal("Other Title", item.title)

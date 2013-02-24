@@ -2,7 +2,6 @@ require "test_helper"
 
 class Admin::PicsControllerTest < ActionController::TestCase
   def setup
-    setup_admin_user
   end
 
   def test_index
