@@ -55,7 +55,8 @@ class Admin::ItemsControllerTest < ActionController::TestCase
       :create,
       :item => {
         :title => "Item Title",
-        :text => "My **text**"
+        :text => "My **text**",
+        :text_es => "Spanish"
       }
     )
 
@@ -64,6 +65,7 @@ class Admin::ItemsControllerTest < ActionController::TestCase
 
     assert_equal("Item Title", item.title)
     assert_equal("My **text**", item.text)
+    assert_equal("Spanish", item.text_es)
   end
 
   def test_edit

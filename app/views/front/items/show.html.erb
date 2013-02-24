@@ -20,5 +20,13 @@
     <div class="text">
       <%= @item.text.to_md %>
     </div>
+
+    <% if @item.text_es %>
+      <hr />
+
+      <div class="text es">
+        <%= @item.text_es.to_md %>
+      </div>
+    <% end %>
   </div>
 </div>
