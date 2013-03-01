@@ -39,6 +39,7 @@ a {
   background-image: url("../img/logo.png");
   background-repeat: no-repeat;
   text-indent: -9999px;
+  background-size: 215px auto;
 }
 
 #header #logo .main {
