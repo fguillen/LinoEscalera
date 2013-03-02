@@ -12,7 +12,7 @@ class Pic < ActiveRecord::Base
 
   paperclip_styles = {
     :front_big => "638x",
-    :front_main => "637x319#",
+    :front_main => "638x319#",
     :front => "311x135#",
     :admin => "200x100#"
   }
@@ -36,7 +36,7 @@ class Pic < ActiveRecord::Base
   end
 
   def initialize_position
-    self.position ||= Pic.minimum(:position).to_i - 1
+    self.position ||= Pic.maximum(:position).to_i + 1
   end
 
   def to_json

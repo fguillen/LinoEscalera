@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224141857) do
+ActiveRecord::Schema.define(:version => 20130302113410) do
 
   create_table "items", :force => true do |t|
-    t.string   "title",              :null => false
+    t.string   "title",                                 :null => false
     t.text     "text"
     t.text     "text_es"
     t.text     "video_script"
@@ -22,9 +22,11 @@ ActiveRecord::Schema.define(:version => 20130224141857) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
-    t.integer  "position",           :null => false
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.integer  "position",                              :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.boolean  "video_script_active", :default => true
+    t.boolean  "video_active",        :default => true
   end
 
   create_table "pages", :force => true do |t|

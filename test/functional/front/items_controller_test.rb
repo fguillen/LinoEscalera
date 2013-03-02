@@ -10,4 +10,24 @@ class Front::ItemsControllerTest < ActionController::TestCase
     assert_template "front/items/show"
     assert_equal(item, assigns(:item))
   end
+
+  def test_show_not_showing_video_if_not_video_active
+    item = FactoryGirl.create(:item, :video => File.open(fixture("pic.jpg")))
+    get :show, :id => item
+    assert_match(/class="video_qt/, @response.body)
+
+    item.update_attributes(:video_active => false)
+    get :show, :id => item
+    assert_not_match(/class="video_qt/, @response.body)
+  end
+
+  def test_show_not_showing_video_script_if_not_video_script_active
+    item = FactoryGirl.create(:item, :video_script => "video_script")
+    get :show, :id => item
+    assert_match(/class="video_script/, @response.body)
+
+    item.update_attributes(:video_script_active => false)
+    get :show, :id => item
+    assert_not_match(/class="video_script/, @response.body)
+  end
 end

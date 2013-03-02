@@ -9,7 +9,7 @@ class ItemTest < ActiveSupport::TestCase
     item_1 = FactoryGirl.create(:item, :position => 10)
     item_2 = FactoryGirl.create(:item)
 
-    assert_equal(9, item_2.position)
+    assert_equal(11, item_2.position)
   end
 
   def test_scope_by_position
@@ -34,5 +34,15 @@ class ItemTest < ActiveSupport::TestCase
     assert_equal(false, item_1.first_in_collection?)
     assert_equal(true, item_2.first_in_collection?)
     assert_equal(true, item_3.first_in_collection?)
+  end
+
+  def test_remove_video_on_demand
+    item = FactoryGirl.create(:item, :id => 1001, :video => File.open(fixture("pic.jpg")))
+
+    item.update_attributes(:remove_video => false)
+    assert_equal(true, item.video.exists?)
+
+    item.update_attributes(:remove_video => true)
+    assert_equal(false, item.video.exists?)
   end
 end

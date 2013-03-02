@@ -9,22 +9,30 @@ a {
   color: black;
 }
 
+#wrapper_header {
+  background-color: white;
+  box-sizing:border-box;
+  width: 718px;
+  padding: 0 40px;
+  margin: 0 auto;
+  z-index: 100;
+  height: 128px;
+}
+
 #wrapper {
   box-sizing:border-box;
-  width: 698px;
-  padding: 0 30px;
+  width: 718px;
+  padding: 0 40px;
   margin: 0 auto;
   position: relative;
 }
 
 #header {
   box-sizing:border-box;
-  position: fixed;
   padding-top: 36px;
   height: 128px;
   width: 638px;
-  background: white;
-  z-index: 100;
+  position: fixed;
 }
 
 #header #logo {
@@ -115,7 +123,7 @@ a {
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 4px;
 
   margin-top: 440px;
@@ -125,6 +133,7 @@ a {
 /* HOME */
 .pic_big {
   width: 638px;
+  height: 319px;
 }
 
 ul.pics {
@@ -173,7 +182,7 @@ ul.pics li:nth-child(even) {
 .item .text {
   margin-top: 10px;
   line-height: 22px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .item .text p {
@@ -186,7 +195,7 @@ ul.pics li:nth-child(even) {
 }
 
 .item .text strong {
-  color: rgb(175, 175, 175);
+  font-weight: bold;
 }
 
 .item .pic {
@@ -194,17 +203,23 @@ ul.pics li:nth-child(even) {
   width: 100%;
 }
 
-.item .info {
+.item .info_block {
   margin-top: 18px;
 }
 
 .item h2 {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .item hr {
   margin-top: 21px;
+}
+
+/* ABOUT */
+
+.item.about .text {
+  font-size: 13px;
 }
 
 /* FOOTER */

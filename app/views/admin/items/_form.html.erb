@@ -1,53 +1,105 @@
 <%= form_for [:admin, @item], :html => { :class => "form-horizontal", :multipart => true } do |f| %>
   <%= render "/admin/shared/form_errors", :object => f.object %>
 
-  <div class="control-group">
-    <%= f.label :title, :class => "control-label" %>
-    <div class="controls">
-      <%= f.text_field :title, :class => "span8" %>
+  <fieldset>
+    <legend>Title</legend>
+    <div class="control-group">
+      <%= f.label :title, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :title, :class => "span8" %>
+      </div>
     </div>
-  </div>
+  </fieldset>
 
-  <div class="control-group">
-    <%= f.label :video, :class => "control-label" %>
-    <div class="controls">
-      <%= f.file_field :video, :class => "span8", :class => "nice_file_field" %>
-      <% if @item.video.exists? %>
-        <span class="help-block">There is already a video uploaded, only add a new video if you want to change the actual one.</span>
-      <% end %>
+  <fieldset>
+    <legend>Video</legend>
+    <div class="control-group">
+      <%= f.label :video, :class => "control-label" %>
+      <div class="controls">
+        <%= f.file_field :video, :class => "span8", :class => "nice_file_field" %>
+        <% if @item.video.exists? %>
+          <span class="help-block">
+            There is already a
+            <%= link_to "video uploaded", @item.video.url %>,
+            only add a new video if you want to change the actual one.
+          </span>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <div class="control-group">
-    <%= f.label :video_script, :class => "control-label" %>
-    <div class="controls">
-      <%= f.text_area :video_script, :class => "span8", :rows => "4" %>
-    </div>
-  </div>
+    <% if @item.video.exists? %>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.label :video_active, :class => "checkbox" do %>
+            <%= f.check_box :video_active %> Video active
+          <% end %>
+        </div>
+      </div>
+    <% end %>
 
-  <div class="control-group">
-    <%= f.label :text, :class => "control-label" %>
-    <div class="controls">
-      <%= f.text_area :text, :class => "span8 mdm-input", :rows => "10" %>
-    </div>
-  </div>
+    <% if @item.video.exists? %>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.label :remove_video, :class => "checkbox" do %>
+            <%= f.check_box :remove_video %> Remove video
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </fieldset>
 
-  <div class="control-group">
-    <%= f.label :text_es, :class => "control-label" %>
-    <div class="controls">
-      <%= f.text_area :text_es, :class => "span8 mdm-input", :rows => "10" %>
-    </div>
-  </div>
+  <fieldset>
+    <legend>Video Script</legend>
 
-  <div class="control-group">
-    <%= f.label :collection_list, :class => "control-label" %>
-    <div class="controls">
-      <label class="checkbox"><%= f.check_box :collection_list, { :multiple => true }, "home", nil %> Home</label>
-      <label class="checkbox"><%= f.check_box :collection_list, { :multiple => true }, "film", nil %> Film</label>
-      <label class="checkbox"><%= f.check_box :collection_list, { :multiple => true }, "commercial", nil %> Commercial</label>
-      <label class="checkbox"><%= f.check_box :collection_list, { :multiple => true }, "brand", nil %> Branded Content</label>
+    <div class="control-group">
+      <%= f.label :video_script, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :video_script, :class => "span8", :rows => "4" %>
+      </div>
     </div>
-  </div>
+
+    <% if !@item.video_script.blank? %>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.label :video_script_active, :class => "checkbox" do %>
+            <%= f.check_box :video_script_active %> Video Script active
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Text</legend>
+
+    <div class="control-group">
+      <%= f.label :text, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :text, :class => "span8 mdm-input", :rows => "10" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :text_es, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :text_es, :class => "span8 mdm-input", :rows => "10" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Collections</legend>
+
+    <div class="control-group">
+      <%= f.label :collection_list, :class => "control-label" %>
+      <div class="controls">
+        <label class="checkbox"><%= f.check_box :collection_list, { :multiple => true }, "home", nil %> Home</label>
+        <label class="checkbox"><%= f.check_box :collection_list, { :multiple => true }, "film", nil %> Film</label>
+        <label class="checkbox"><%= f.check_box :collection_list, { :multiple => true }, "commercial", nil %> Commercial</label>
+        <label class="checkbox"><%= f.check_box :collection_list, { :multiple => true }, "brand", nil %> Branded Content</label>
+      </div>
+    </div>
+  </fieldset>
 
   <div class="control-group">
     <div class="controls">

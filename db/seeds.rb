@@ -20,4 +20,10 @@ ActiveRecord::Base.transaction do
 
     puts "Created item [#{item.id}] – #{item.title}"
   end
+
+  Page.create!(
+    :title => "About",
+    :text => "About text",
+    :text_es => "About text es"
+  )
 end

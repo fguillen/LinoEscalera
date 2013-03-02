@@ -1,33 +1,33 @@
 <% title "Item > #{@item.title}" %>
 
 <div class="item film">
-  <% if @item.video.exists? %>
-    <div class="video_qt">
-      <embed
-        src="<%= @item.video.url %>"
-        autoplay="true"
-        width="638"
-        height="494"
-        scale="aspect"
-        pluginspage="http://www.apple.com/quicktime/download/"> </embed>
+  <% if @item.video.exists? && @item.video_active %>
+    <div class="video_qt info_block">
+      <video width="638" controls>
+        <source src="<%= @item.video.url %>" type="video/mp4">
+        Your browser does not support the video player please use a
+        modern browser.
+      </video>
     </div>
   <% end %>
 
-  <% if !@item.video_script.blank? %>
-    <div class="video_script">
+  <% if !@item.video_script.blank? && @item.video_script_active %>
+    <div class="video_script info_block">
       <%= @item.video_script.html_safe %>
     </div>
   <% end %>
 
-  <div class="pics">
-    <ul>
-      <% @item.pics_show.each do |pic| %>
-        <li class="pic"><%= image_tag pic.attach(:front_big) %></li>
-      <% end %>
-    </ul>
-  </div>
+  <% if !@item.pics.empty? %>
+    <div class="pics info_block">
+      <ul>
+        <% @item.pics_show.each do |pic| %>
+          <li class="pic"><%= image_tag pic.attach(:front_big) %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <div class="info">
+  <div class="info info_block">
     <h2><%= @item.title %></h2>
     <div class="text">
       <%= @item.text.to_md %>

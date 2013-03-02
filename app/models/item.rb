@@ -14,6 +14,7 @@ class Item < ActiveRecord::Base
   attr_protected nil
 
   before_validation :initialize_position
+  after_update :remove_video_on_demand, :if => :remove_video?
 
   validates :title, :presence => true, :uniqueness => true
   validates :text, :presence => true
@@ -21,6 +22,8 @@ class Item < ActiveRecord::Base
 
   scope :by_position, order("position asc")
 
+
+  attr_accessor :remove_video
 
   # TODO: ugly! the point is that in test we don't use S3 so it needs another config
   if APP_CONFIG[:s3_credentials]
@@ -39,7 +42,7 @@ class Item < ActiveRecord::Base
   end
 
   def initialize_position
-    self.position ||= Item.minimum(:position).to_i - 1
+    self.position ||= Item.maximum(:position).to_i + 1
   end
 
   def to_param
@@ -67,5 +70,13 @@ class Item < ActiveRecord::Base
     end
 
     return false
+  end
+
+  def remove_video?
+    remove_video == true
+  end
+
+  def remove_video_on_demand
+    video.destroy
   end
 end
