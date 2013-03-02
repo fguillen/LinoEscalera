@@ -9,16 +9,6 @@ a {
   color: black;
 }
 
-#wrapper_header {
-  background-color: white;
-  box-sizing:border-box;
-  width: 718px;
-  padding: 0 40px;
-  margin: 0 auto;
-  z-index: 100;
-  height: 128px;
-}
-
 #wrapper {
   box-sizing:border-box;
   width: 718px;
@@ -29,10 +19,12 @@ a {
 
 #header {
   box-sizing:border-box;
+  position: fixed;
   padding-top: 36px;
   height: 128px;
-  width: 638px;
-  position: fixed;
+  width: 640px;
+  background: white;
+  z-index: 100;
 }
 
 #header #logo {
