@@ -27,6 +27,13 @@
       </div>
     </div>
 
+    <div class="control-group">
+      <%= f.label :video_height, :class => "control-label" %>
+      <div class="controls">
+        <%= f.number_field :video_height, :class => "span1" %>
+      </div>
+    </div>
+
     <% if @item.video.exists? %>
       <div class="control-group">
         <div class="controls">

@@ -14,6 +14,7 @@ gem "bluecloth"
 gem "authlogic"
 gem "acts-as-taggable-on"
 gem "faker"
+gem "browser"
 
 group :development do
   gem "nifty-generators"

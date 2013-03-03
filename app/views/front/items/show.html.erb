@@ -3,11 +3,21 @@
 <div class="item film">
   <% if @item.video.exists? && @item.video_active %>
     <div class="video_qt info_block">
-      <video width="638" controls>
-        <source src="<%= @item.video.url %>" type="video/mp4">
-        Your browser does not support the video player please use a
-        modern browser.
-      </video>
+      <% if true #browser.firefox? %>
+        <embed
+          src="<%= @item.video.url %>"
+          autoplay="true"
+          width="638"
+          height="<%= @item.video_height %>"
+          scale="aspect"
+          bgcolor="#ffffff"
+          pluginspage="http://www.apple.com/quicktime/download/"> </embed>
+      <% else %>
+        <video src="<%= @item.video.url %>" width="638" controls>
+          Your browser does not support the video player please use a
+          modern browser.
+        </video>
+      <% end %>
     </div>
   <% end %>
 

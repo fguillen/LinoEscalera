@@ -39,6 +39,7 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bluecloth (2.2.0)
+    browser (0.1.6)
     builder (3.0.4)
     capistrano (2.14.2)
       highline
@@ -163,6 +164,7 @@ DEPENDENCIES
   authlogic
   aws-sdk
   bluecloth
+  browser
   capistrano
   capybara
   database_cleaner
