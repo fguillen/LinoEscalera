@@ -3,7 +3,7 @@
 <div class="item film">
   <% if @item.video.exists? && @item.video_active %>
     <div class="video_qt info_block">
-      <% if true #browser.firefox? %>
+      <% if browser.firefox? %>
         <embed
           src="<%= @item.video.url %>"
           autoplay="true"
