@@ -32,7 +32,8 @@ a {
   background-color: white;
 }
 
-#page .wrapper {
+#page {
+  margin-bottom: 80px;
 }
 
 #header .wrapper {
