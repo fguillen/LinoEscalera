@@ -39,10 +39,10 @@ class ItemTest < ActiveSupport::TestCase
   def test_remove_video_on_demand
     item = FactoryGirl.create(:item, :id => 1001, :video => File.open(fixture("pic.jpg")))
 
-    item.update_attributes(:remove_video => false)
+    item.update_attributes(:remove_video => "0")
     assert_equal(true, item.video.exists?)
 
-    item.update_attributes(:remove_video => true)
+    item.update_attributes(:remove_video => "1")
     assert_equal(false, item.video.exists?)
   end
 end

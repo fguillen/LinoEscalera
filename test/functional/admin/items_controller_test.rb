@@ -97,6 +97,22 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     assert_equal("Other Title", item.title)
   end
 
+  def test_update_remove_video
+    item = FactoryGirl.create(:item, :video => File.open(fixture("pic.jpg")))
+    assert(item.video.exists?)
+
+    put(
+      :update,
+      :id => item,
+      :item => {
+        :remove_video => "1"
+      }
+    )
+
+    item.reload
+    assert(!item.video.exists?)
+  end
+
   def test_destroy
     item = FactoryGirl.create(:item)
 

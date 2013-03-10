@@ -73,7 +73,7 @@ class Item < ActiveRecord::Base
   end
 
   def remove_video?
-    remove_video == true
+    remove_video == "1"
   end
 
   def remove_video_on_demand
