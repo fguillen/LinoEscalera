@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>LinoEscalera | <%= content_for?(:title) ? yield(:title) : "" %></title>
+    <link rel="icon" type="image/jpeg" href="/assets/app/front/img/favicon.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= javascript_include_tag "/assets/vendor/jquery/jquery.js" %>
@@ -19,10 +20,8 @@
   </head>
 
   <body>
-    <div id="wrapper">
-      <div id="email" class=""><a href="mailto:me@linoescalera.com">me@linoescalera.com</a></div>
-      <div id="header">
-        <a href="./home.html">
+    <div id="header">
+      <div class="wrapper">
         <%= link_to root_path do %>
           <div id="logo" class="text_replaced">
             <div class="main">Lino Escalera</div>
@@ -46,12 +45,17 @@
           </ul>
         </div>
       </div>
+    </div>
 
-      <div id="content">
-        <%= yield %>
+    <div id="page">
+      <div class="wrapper">
+        <div id="email" class=""><a href="mailto:me@linoescalera.com">me@linoescalera.com</a></div>
+
+        <div id="content">
+          <%= yield %>
+        </div>
+
       </div>
-
-      <div id="footer">&nbsp;</div>
     </div>
 
     <%= render "shared/analytics" %>
