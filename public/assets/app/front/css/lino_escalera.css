@@ -237,7 +237,7 @@ ul.pics li:nth-child(even) {
 
 /* ABOUT */
 
-.item .text p {
+.item.about .text p {
   text-align: justify;
 }
 
