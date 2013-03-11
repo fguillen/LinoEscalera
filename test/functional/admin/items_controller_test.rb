@@ -85,7 +85,8 @@ class Admin::ItemsControllerTest < ActionController::TestCase
       :update,
       :id => item,
       :item => {
-        :title => "Other Title"
+        :title => "Other Title",
+        :html5_active => "0"
       }
     )
 
@@ -95,6 +96,7 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     assert_not_nil(flash[:notice])
 
     assert_equal("Other Title", item.title)
+    assert_equal(false, item.html5_active)
   end
 
   def test_update_remove_video

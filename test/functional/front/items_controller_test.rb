@@ -30,4 +30,15 @@ class Front::ItemsControllerTest < ActionController::TestCase
     get :show, :id => item
     assert_not_match(/class="video_script/, @response.body)
   end
+
+  def test_show_html5_active
+    item = FactoryGirl.create(:item, :video => File.open(fixture("pic.jpg")))
+    get :show, :id => item
+    assert_not_match(/<embed/, @response.body)
+
+
+    item.update_attributes(:html5_active => false)
+    get :show, :id => item
+    assert_match(/<embed/, @response.body)
+  end
 end

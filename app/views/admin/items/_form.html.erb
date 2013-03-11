@@ -42,6 +42,14 @@
           <% end %>
         </div>
       </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <%= f.label :html5_active, :class => "checkbox" do %>
+            <%= f.check_box :html5_active %> HTML5 player active
+          <% end %>
+        </div>
+      </div>
     <% end %>
 
     <% if @item.video.exists? %>

@@ -3,15 +3,14 @@
 <div class="item film">
   <% if @item.video.exists? && @item.video_active %>
     <div class="video_qt info_block">
-      <% if browser.firefox? %>
-        <embed
-          src="<%= @item.video.url %>"
-          autoplay="true"
-          width="638"
-          height="<%= @item.video_height %>"
-          scale="aspect"
-          bgcolor="#ccccff"
-          pluginspage="http://www.apple.com/quicktime/download/"></embed>
+      <% if browser.firefox? || !@item.html5_active %>
+        <object width="638" height="<%= @item.video_height %>" id="video" codebase="http://www.apple.com/qtactivex/qtplugin.cab" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B">
+          <param value="<%= @item.video.url %>" name="src">
+          <param value="true" name="autoplay">
+          <param width="638" height="<%= @item.video_height %>" value="video/quicktime" name="type">
+          <param value="true" name="kioskmode">
+          <embed bgcolor="#ffffff" width="638" height="<%= @item.video_height %>" pluginspage="http://www.apple.com/quicktime/download/" kioskmode="true" name="video" type="video/quicktime" autoplay="true" src="<%= @item.video.url %>">
+        </object>
       <% else %>
         <video src="<%= @item.video.url %>" width="638" controls>
           Your browser does not support the video player please use a

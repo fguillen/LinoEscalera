@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303123832) do
+ActiveRecord::Schema.define(:version => 20130311194025) do
 
   create_table "items", :force => true do |t|
     t.string   "title",                                 :null => false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130303123832) do
     t.boolean  "video_script_active", :default => true
     t.boolean  "video_active",        :default => true
     t.integer  "video_height",        :default => 480
+    t.boolean  "html5_active",        :default => true
   end
 
   create_table "pages", :force => true do |t|
