@@ -9,7 +9,8 @@
           <param value="true" name="autoplay">
           <param width="638" height="<%= @item.video_height %>" value="video/quicktime" name="type">
           <param value="true" name="kioskmode">
-          <embed bgcolor="#ffffff" width="638" height="<%= @item.video_height %>" pluginspage="http://www.apple.com/quicktime/download/" kioskmode="true" name="video" type="video/quicktime" autoplay="true" src="<%= @item.video.url %>">
+          <param value="tofit" name="scale">
+          <embed bgcolor="#ffffff" scale="tofit" width="638" height="<%= @item.video_height %>" pluginspage="http://www.apple.com/quicktime/download/" kioskmode="true" name="video" type="video/quicktime" autoplay="true" src="<%= @item.video.url %>">
         </object>
       <% else %>
         <video src="<%= @item.video.url %>" width="638" controls>

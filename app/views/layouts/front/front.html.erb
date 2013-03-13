@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>LinoEscalera | <%= content_for?(:title) ? yield(:title) : "" %></title>
     <link rel="icon" type="image/jpeg" href="/assets/app/front/img/favicon.jpg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+
 
     <%= javascript_include_tag "/assets/vendor/jquery/jquery.js" %>
     <%= stylesheet_link_tag "/assets/vendor/etc/reset.css" %>
@@ -17,6 +18,7 @@
     <%= javascript_include_tag "/assets/app/front/js/front.js" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
+
   </head>
 
   <body>
