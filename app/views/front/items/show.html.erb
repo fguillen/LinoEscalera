@@ -7,11 +7,18 @@
         <object width="638" height="<%= @item.video_height %>" id="video" codebase="http://www.apple.com/qtactivex/qtplugin.cab" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B">
           <param value="<%= @item.video.url %>" name="src">
           <param value="true" name="autoplay">
-          <param width="638" height="<%= @item.video_height %>" value="video/quicktime" name="type">
+          <param name="type" value="video/quicktime" height="<%= @item.video_height %>" width="638">
           <param value="true" name="kioskmode">
-          <param value="tofit" name="scale">
-          <embed bgcolor="#ffffff" scale="tofit" width="638" height="<%= @item.video_height %>" pluginspage="http://www.apple.com/quicktime/download/" kioskmode="true" name="video" type="video/quicktime" autoplay="true" src="<%= @item.video.url %>">
+          <embed bgcolor="#ffffff" width="638" height="<%= @item.video_height %>" pluginspage="http://www.apple.com/quicktime/download/" kioskmode="true" name="video" type="video/quicktime" autoplay="true" src="<%= @item.video.url %>">
         </object>
+
+<!--         <object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="375" width="640" id="video">
+          <param name="src" value="http://cache.wdcdn.net/asset/assetId/1154042/size/primary/ts/1362490393/type/library/MG_BLACKS_visit_england.mov?token=c8703bc8654d41496719e5275385843b&amp;category=pres&amp;action=view">
+          <param name="autoplay" value="true">
+          <param name="type" value="video/quicktime" height="375" width="640">
+          <param name="kioskmode" value="true">
+          <embed src="http://cache.wdcdn.net/asset/assetId/1154042/size/primary/ts/1362490393/type/library/MG_BLACKS_visit_england.mov?token=c8703bc8654d41496719e5275385843b&amp;category=pres&amp;action=view" height="375" width="640" autoplay="true" type="video/quicktime" name="video" kioskmode="true" pluginspage="http://www.apple.com/quicktime/download/">
+        </object> -->
       <% else %>
         <video src="<%= @item.video.url %>" width="638" controls>
           Your browser does not support the video player please use a
