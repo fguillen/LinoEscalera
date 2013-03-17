@@ -23,4 +23,10 @@ module ApplicationHelper
     return "active" if menus[actual_menu_name].any? { |e| path =~ /^#{e}$/ }
     return "no-active"
   end
+
+  def body_class
+    return "normal" if !browser.tablet? || !browser.mobile?
+    return "normal ipad" if browser.tablet? && !browser.mobile?
+    return "iphone"
+  end
 end

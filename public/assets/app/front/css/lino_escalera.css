@@ -114,13 +114,24 @@ a {
 }
 
 /* EMAIL */
-#email {
+.email {
   box-sizing:border-box;
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
 
-  position: fixed;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
 
+body.normal .email.iphone {
+  display: none;
+}
+
+body.normal .email {
+  position: fixed;
   height: 7px;
 
   transform:rotate(-90deg);
@@ -128,12 +139,6 @@ a {
   -moz-transform:rotate(-90deg);
   -webkit-transform:rotate(-90deg);
   -o-transform:rotate(-90deg);
-
-  font-family: "Josefin Sans", sans-serif;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 10px;
-  letter-spacing: 4px;
 
   margin-top: 440px;
   margin-left: -130px;
