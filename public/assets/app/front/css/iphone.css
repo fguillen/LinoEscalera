@@ -30,7 +30,6 @@ body.iphone .email.iphone {
   text-align: left;
 }
 
-body.iphone #header #menu a:hover,
-body.ipad #header #menu a:hover {
+body.iphone #header #menu a:hover {
   text-decoration: none;
 }
