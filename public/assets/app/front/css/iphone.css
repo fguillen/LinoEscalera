@@ -1,6 +1,10 @@
-.wrapper {
+body.iphone .wrapper {
   width: 678px;
   padding: 0 20px;
+}
+
+body.iphone #page .wrapper #content {
+  min-height: 750px;
 }
 
 body.iphone #page {
