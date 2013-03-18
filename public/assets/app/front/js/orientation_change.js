@@ -3,7 +3,7 @@ $(window).bind('orientationchange', function(event) {
   console.log("orientationchange");
 
   var default_opts_tablet = "initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no";
-  var default_opts_mobile = "user-scalable=no";
+  var default_opts_mobile = "";
 
   if (window.orientation == 90 || window.orientation == -90 || window.orientation == 270) {
     $('meta[name="viewport"].tablet').attr('content', 'height=device-width,width=device-height,' + default_opts_tablet);

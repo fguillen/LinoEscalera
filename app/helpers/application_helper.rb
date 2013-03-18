@@ -25,8 +25,8 @@ module ApplicationHelper
   end
 
   def body_class
-    return "normal" if !browser.tablet? || !browser.mobile?
-    return "normal ipad" if browser.tablet? && !browser.mobile?
+    return "normal" if !browser.tablet? && !browser.mobile?
+    return "normal ipad" if browser.tablet? && browser.mobile?
     return "iphone"
   end
 end
