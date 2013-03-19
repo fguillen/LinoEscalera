@@ -29,4 +29,9 @@ module ApplicationHelper
     return "normal ipad" if browser.tablet? && browser.mobile?
     return "iphone"
   end
+
+  def video_height(item)
+    return item.video_height - 15 if browser.mobile?
+    return item.video_height
+  end
 end
