@@ -31,6 +31,7 @@ class Item < ActiveRecord::Base
       :video,
       :storage => :s3,
       :s3_credentials => APP_CONFIG[:s3_credentials],
+      :s3_host_name => "s3-eu-west-1.amazonaws.com",
       :path => "/:rails_env/:id/video.:extension",
     )
   else

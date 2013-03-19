@@ -30,7 +30,7 @@ production:
     pass: "pass"
 
   s3_credentials:
-    bucket: "skeleton_production"
+    bucket: "newlinoescaleraeu"
     access_key_id: "KEY"
     secret_access_key: "SECRET"
 
