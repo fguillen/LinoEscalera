@@ -31,7 +31,7 @@ module ApplicationHelper
   end
 
   def video_height(item)
-    return item.video_height - 15 if browser.mobile?
-    return item.video_height
+    return item.video_height if browser.mobile?
+    return item.video_height + 15
   end
 end
