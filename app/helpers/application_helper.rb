@@ -15,7 +15,7 @@ module ApplicationHelper
       :film => ["/front/collections/film"],
       :commercial => ["/front/collections/commercial"],
       :brand => ["/front/collections/brand"],
-      :about => ["/front/pages/about"]
+      :about => ["/front/about"]
     }
 
     path = request.fullpath.gsub(/\?.*/, "")

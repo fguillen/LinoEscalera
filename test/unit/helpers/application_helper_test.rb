@@ -16,6 +16,9 @@ class ApplicationHelperTest < ActionView::TestCase
 
     request_mock.stubs(:fullpath).returns("/front/collections/brand")
     assert_equal("active", menu_class(:brand))
+
+    request_mock.stubs(:fullpath).returns("/front/about")
+    assert_equal("active", menu_class(:about))
   end
 
 end
