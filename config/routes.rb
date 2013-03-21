@@ -1,6 +1,9 @@
 LinoEscalera::Application.routes.draw do
   root :to => "front/collections#show", :defaults => { :id => Item::COLLECTIONS[:home] }
 
+  match "/page/page/items/4-biofilmografia" => redirect("/front/about")
+  match "/video/films/items/17-space-2" => redirect("/front/collections/film")
+
   namespace :front do
     resource :about, :only => [:show]
     resources :items, :only => [:show]

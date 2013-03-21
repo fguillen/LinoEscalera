@@ -1,4 +1,4 @@
-<% title "Collections > #{params[:id]}" %>
+<% title "Collections | #{params[:id]}" %>
 
 <% unless @items.empty? %>
   <%= render :partial => "front/items/item_main", :locals => { :item => @items.first } %>

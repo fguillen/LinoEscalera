@@ -5,6 +5,16 @@
     <title>LinoEscalera | <%= content_for?(:title) ? yield(:title) : "" %></title>
     <link rel="icon" type="image/jpeg" href="/assets/app/front/img/favicon.jpg">
 
+    <meta name="description" content="Lino Escalera realizador, sitio web oficial, official website">
+    <meta name="keywords" content="linoescalera, lino escalera, cine, producción, publicidad, realización, cinema, production, publicity, director, realization">
+    <meta http-equiv="content-language" content="en">
+
+    <meta name="copyright" content="Lino Escalera">
+    <meta name="author" content="Lino Escalera">
+    <meta name="Distribution" content="Global">
+    <meta name="Rating" content="General">
+    <meta name="Robots" content="INDEX,FOLLOW">
+
     <%= javascript_include_tag "/assets/vendor/jquery/jquery.js" %>
     <%= stylesheet_link_tag "/assets/vendor/etc/reset.css" %>
 
@@ -14,7 +24,6 @@
     <%= stylesheet_link_tag "/assets/app/front/css/lino_escalera.css", :media => "all" %>
 
     <%= javascript_include_tag "/assets/app/front/js/front.js" %>
-
 
     <!-- mobile & tablet -->
     <% if body_class =~ /ipad/ %>
