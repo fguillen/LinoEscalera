@@ -3,6 +3,9 @@ LinoEscalera::Application.routes.draw do
 
   match "/page/page/items/4-biofilmografia" => redirect("/front/about")
   match "/video/films/items/17-space-2" => redirect("/front/collections/film")
+  match "/blog/news/items" => redirect("/")
+  match "/blog/press/items" => redirect("/")
+  match "/video/other/items/31-futuro-imperfecto" => redirect("/")
 
   namespace :front do
     resource :about, :only => [:show]
