@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "3.2.11"
+gem "rails", "3.2.22.2"
 
 gem "mysql2"
 gem "json"
@@ -22,7 +22,7 @@ group :development do
 end
 
 group :test do
-  gem "mocha", :require => false
+  gem "mocha", "0.13.3", :require => "mocha/api"
   gem "factory_girl"
   gem "simplecov", :require => false
   gem "delorean"
